@@ -1,0 +1,46 @@
+﻿@page
+@model Profesorii_Meditati.Pages.Programare.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Esti sigur ca doresti sa stergi aceasta programare?</h3>
+<div>
+    <h4>Programare</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.StudentId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.StudentId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.MeditatieId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.MeditatieId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.Data)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.Stare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.Stare)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Programare.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

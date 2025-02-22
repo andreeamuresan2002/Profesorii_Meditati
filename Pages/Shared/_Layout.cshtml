@@ -1,0 +1,118 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Profesorii_Meditati.Models
+@using Microsoft.AspNetCore.Mvc.Rendering
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Profesorii_Meditati</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Profesorii_Meditati.styles.css" asp-append-version="true" />
+    <style>
+        /* Stiluri Navbar */
+        .navbar {
+            background-color: #006F3F;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #009F6C; /* Albastru deschis pentru hover */
+                transform: scale(1.1);
+            }
+
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+
+        .btn-primary {
+            background-color: #2C3E50;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #3498DB;
+            }
+
+        /* Main content */
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main content -->
+    <div class="content">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-light">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">Profesori Meditatii</a>
+                    <!-- Navbar Toggler for small screens -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                            aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Index" style="font-size: 18px;">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Meditatie/Index" style="font-size: 18px;">Meditatii</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Student/Index" style="font-size: 18px;">Student</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Profesor/Index" style="font-size: 18px;">Profesori</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Programare/Index" style="font-size: 18px;">Programare</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Recenzie/Index" style="font-size: 18px;">Recenzii</a>
+                            </li>
+                            <!-- Secțiune Login/Logout -->
+                            <li class="nav-item">
+                                <partial name="_LoginPartial" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Profesorii_Meditati - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
